@@ -11,3 +11,31 @@ CREATE TABLE albums (
   genre VARCHAR (25) DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS contacts;
+
+CREATE TABLE contacts (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR (50) DEFAULT NULL,
+  number VARCHAR (15) DEFAULT NULL,
+  email VARCHAR (50) DEFAULT NULL,
+  created_at DATETIME,
+  updated_at DATETIME,
+  PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS pizza_order_table;
+
+CREATE TABLE pizza_order_table (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) DEFAULT NULL,
+  phone_number VARCHAR (15) DEFAULT NULL,
+  email VARCHAR (50) DEFAULT NULL,
+  pizza_size CHAR (2) DEFAULT NULL,
+  total_cost DECIMAL(5,2) DEFAULT NULL,
+  description TEXT DEFAULT NULL,
+  isDelivered BOOLEAN DEFAULT NULL,
+  created_at DATETIME,
+  updated_at DATETIME,
+  PRIMARY KEY (id)
+);
