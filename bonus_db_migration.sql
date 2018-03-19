@@ -1,0 +1,11 @@
+USE bonus_db;
+
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE products (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+product VARCHAR (50),
+price DECIMAL (8,2),
+isTRUE BOOLEAN,
+PRIMARY KEY (id)
+);
