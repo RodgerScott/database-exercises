@@ -25,7 +25,7 @@ WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') AND 
 # Exercise 2
 SELECT CONCAT(first_name, ' ', last_name)
 FROM employees
-WHERE last_name LIKE 'E%'
+WHERE last_name LIKE '%E%'
 ORDER BY emp_no ASC;
 
 
