@@ -60,12 +60,12 @@ WHERE gender IN (
 
 # Bonus 2 Find the first and last name of the employee with the highest salary.
 
-SELECT first_name, last_name, salary
+SELECT first_name, last_name, salary, title
 FROM employees e
 JOIN salaries s
 ON e.emp_no = s.emp_no
+  JOIN titles t ON e.emp_no = t.emp_no
 WHERE salary IN (
   SELECT max(salary)
   FROM salaries
-
 );
