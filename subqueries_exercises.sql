@@ -41,6 +41,15 @@ WHERE gender IN (
   WHERE gender = 'f' AND de.to_date > curdate() AND t.title = 'manager'
 );
 
+
+SELECT first_name, last_name
+FROM employees
+WHERE emp_no IN (
+  SELECT emp_no
+  FROM dept_manager
+  WHERE to_date > curdate() AND gender = 'f'
+);
+
 # Bonus 1 Find all the department names that currently have female managers.
 
 
