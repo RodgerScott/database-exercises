@@ -41,3 +41,31 @@ WHERE gender IN (
   WHERE gender = 'f' AND de.to_date > curdate() AND t.title = 'manager'
 );
 
+# Bonus 1 Find all the department names that currently have female managers.
+
+
+SELECT DISTINCT dept_name
+FROM departments de
+  JOIN dept_manager dep
+    ON de.dept_no = dep.dept_no
+  JOIN employees e
+    ON e.emp_no = dep.emp_no
+  JOIN titles t
+    ON e.emp_no = t.emp_no
+WHERE gender IN (
+  SELECT gender
+    FROM employees
+  WHERE gender = 'f' AND title = 'Manager' AND dep.to_date > curdate()
+);
+
+# Bonus 2 Find the first and last name of the employee with the highest salary.
+
+SELECT first_name, last_name, salary
+FROM employees e
+JOIN salaries s
+ON e.emp_no = s.emp_no
+WHERE salary IN (
+  SELECT max(salary)
+  FROM salaries
+
+);
